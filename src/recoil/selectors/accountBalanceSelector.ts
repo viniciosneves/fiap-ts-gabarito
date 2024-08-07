@@ -1,9 +1,7 @@
-// accountBalanceSelector
-
 import { selector } from 'recoil';
 import { transactionsState } from '../atoms/transactionAtom';
 
-export const accountBalanceSelector = selector({
+export const accountBalanceSelector = selector<number>({
     key: 'accountBalanceSelector',
     get: ({ get }) => {
         const transactions = get(transactionsState);
