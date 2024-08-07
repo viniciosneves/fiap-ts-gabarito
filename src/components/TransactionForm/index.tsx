@@ -6,13 +6,13 @@ import useAddTransaction from "../../hooks/useAddTransaction";
 
 export const TransactionForm = () => {
 
-    const [transactionType, setTransactionType] = useState('')
-    const [transactionValue, setTransactionValue] = useState('')
+    const [transactionType, setTransactionType] = useState<string>('')
+    const [transactionValue, setTransactionValue] = useState<string>('')
     const transactionTypes = useRecoilValue(transactionTypesState);
 
     const { addTransaction } = useAddTransaction();
 
-    const handleSubmit = (evt) => {
+    const handleSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
         evt.preventDefault();
         addTransaction(transactionType, transactionValue);
 

@@ -1,10 +1,10 @@
 import { useRecoilState } from 'recoil';
-    import { transactionsState } from '../recoil/atoms/transactionAtom';
+import { transactionsState } from '../recoil/atoms/transactionAtom';
 
 const useAddTransaction = () => {
     const [transactions, setTransactions] = useRecoilState(transactionsState);
 
-    const addTransaction = (transactionType, transactionValue) => {
+    const addTransaction = (transactionType: string, transactionValue: string) => {
         const newId = transactions.length + 1;
         const value = parseFloat(transactionValue);
         const newTransaction = {
